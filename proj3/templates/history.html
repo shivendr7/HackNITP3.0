@@ -1,0 +1,57 @@
+{% extends 'inuser.html' %}
+{% block navmenu %}
+<ul>
+    <li><a onclick="axe()" href="/dash">Dashboard</a></li>
+    <li><a onclick="axe()" href="/cultivate">Cultivate</a></li>
+    <li><a onclick="axe()" class="active" href="/history">History</a></li>
+    <li><a onclick="axe()" href="/story">Stories</a></li>
+    <li><a onclick="axe()" href="/account">Account</a></li>
+</ul>
+{% endblock %}
+{% block right %}
+<div class="rightcontainer">
+    <h5>Your Comments</h5>
+    <div class="card">
+        <p>Commented <span id="t">t </span><span id="time"> time</span> ago on <span id="onUser">Naveen</span>'s post
+             <span id="postTitle">Titled</span></p>
+        <br>
+        <h3 id="comment">Lorem ipsum dolor int natus veritatis alias dolo</h3>
+        <br>
+        <div class="cardsentiment">
+            <div >
+                Tags:
+                <span id="tag">#tag1</span>
+                <span id="tag">#tag2</span>
+            </div>
+            <div >
+                Sentiment:
+                <span id="sentival">0.3</span>
+            </div>
+        </div>
+    </div>
+    
+    <a href="#" id="viewflex">View More</a>
+    <br>
+    <h5>Other's Responses</h5>
+    <div class="card">
+        <p><span id="onUser">Naveen</span> responded <span id="t">t </span><span id="time"> time</span> ago on post
+             <span id="postTitle">Titled</span></p>
+        <br>
+        <h3 id="response">Lorem ipsum dolor int natus veritatis alias dolo</h3>
+        <br>
+        <div class="cardsentiment">
+            <div >
+                Tags:
+                <span id="tag">#tag1</span>
+                <span id="tag">#tag2</span>
+            </div>
+            <div >
+                Sentiment:
+                <span id="sentival">0.3</span>
+            </div>
+        </div>
+    </div>
+    <a href="#" id="viewflex">View More</a>
+
+</div>
+{% endblock %}
