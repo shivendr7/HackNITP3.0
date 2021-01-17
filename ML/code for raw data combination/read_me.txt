@@ -1,0 +1,1 @@
+FarmPlus_daywiseData contains the python code which is used to combine all the raw data into single file. 
