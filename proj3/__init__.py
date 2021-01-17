@@ -500,6 +500,7 @@ def anews():
 
 @app.route('/feed',methods=['POST','GET'])
 def feed():
+    img=None
     if request.method=='POST':
         if 'file' in request.files:
             file=request.files['file']
