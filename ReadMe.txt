@@ -19,3 +19,5 @@ run __init__.py with required versions
 
 Please note: Due to hustle we aren't able to include some functionalities in the app, which includes logout too.
 So to logout please close the browser[the sessions are not made permanent]
+
+[[PPT LINK:-  https://docs.google.com/presentation/d/1CcBJPQSw9WUDDG_trQASEezpYxz25OKmFPxCydSZB84/edit?usp=sharing  ]]
