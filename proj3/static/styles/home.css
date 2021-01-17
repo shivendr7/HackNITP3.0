@@ -1,0 +1,896 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    cursor: default;
+    scroll-behavior: smooth;
+}
+
+nav {
+    position: fixed;
+    top:0;
+    height: 12vh;
+    width: 100%;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    padding-left: 10%;
+    padding-right: 10%;
+    transition: all .25s ease-in;
+}
+
+nav .logo img {
+    height: 50px;
+    width: 50px;
+    margin-top: -10px;
+}
+nav .logo {
+    display: flex;
+    margin-top: 13px;
+}
+nav .logo h4 {
+    position: absolute;
+    margin-left:30px;
+    font-size: 20px;
+    text-shadow:0.5px 0 1px rgba(0,0,0,0.5);
+}
+
+ul {
+    position: relative;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+ul li a {
+    text-shadow:0 0 1px rgba(0,0,0,0.5);
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+ul li {
+    list-style: none;
+}
+ul li .active {
+    color:rgb(0, 255, 0)
+    
+}
+.sticky {
+    background: #fff;
+    height: 11vh;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+.head {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.headIm {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top:0;
+    left:0;
+    transition: all .10s ease;
+}
+.head .logoContainer {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    z-index: 2;
+    align-items: center;
+    justify-content: space-between;
+    height: 130px;
+    left:10px;
+    top:50vh;
+    transform: translateY(-50%);
+}
+.logoContainer .logo {
+    filter: saturate(10%);
+    border-radius: 15px;
+    overflow: hidden;
+    
+    transition: all .25s ease;
+    
+}
+.logoContainer .logo:hover {
+    filter: saturate(100%);
+    transform: scale(1.2);
+}
+.logoContainer img {
+    height: 35px;
+    width: 35px;
+    cursor: pointer;
+}
+.head #title0  {
+    position: absolute;
+    height: 50%;
+    right: 10%;
+    top:17%;
+    z-index: 2;
+    transition: all .25s ease;
+}
+.head p {
+    position: absolute;
+    right:calc(10% + 5px);
+    top:calc(67% + 15px);
+    z-index: 2;
+    transition: all .2s ease;
+}
+.head p a {
+    text-decoration: none;
+    color: rgb(0, 255, 0);
+    z-index: 2;
+    text-shadow: 0 0 1px rgba(0,0,0,0.5);
+}
+.head .btn {
+    position: absolute;
+    background-color: rgba(0,255,0,1);
+    padding:5px 10px;
+    border-radius: 5px;
+    box-shadow:0 0 2px rgba(0,0,0,0.5);
+    cursor: pointer;
+    z-index: 2;
+    right:calc(10% + 10px);
+    top:calc(67% + 45px);
+    color: white;
+    transition: all .15s ease;
+}
+.head .btn:hover {
+    box-shadow:0 2px 5px rgba(0,0,0,0.5);
+} 
+@keyframes upsideDown {
+    0% {
+        transform: translateY(-200%);
+        opacity: 1;
+    }
+    60% {
+        transform: translateY(10px);
+    }
+    100% {
+        
+        transform: translateX(calc(var(--x)/-30)) translateY(calc(var(--y)/-30));
+    
+        opacity: 1;
+    }
+}
+.head #bar1 {
+    border:solid 3px;
+    border-color: rgba(0,0,0,.5);
+    height: 500px;
+    width: 50px;
+    position: absolute;
+    left:19%;
+    top:-25px;
+    background-color: rgba(0,255,0,1);
+    opacity: 0;
+    animation: upsideDown 5s ease 2s;
+    transition: all 1s;
+    
+    animation-fill-mode:forwards;
+}
+@keyframes bottomUp {
+    0% {
+        opacity: 1;
+        transform: translateY(100%);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+    100% {
+        
+        transform: translateX(calc(var(--x)/-60)) translateY(calc(var(--y)/-60));
+    
+        opacity: 1;
+    }
+}
+
+.head #bar2 {
+    border:solid 3px;
+    border-color: rgba(0,255,0,1);
+    height: 300px;
+    width: 50px;
+    position: absolute;
+    left:55%;
+    bottom:-25px;
+    background-color: rgba(0, 0, 0,0);
+    opacity: 0;
+    animation: bottomUp 5s ease 2s;
+    animation-fill-mode:forwards;
+    transition: all .25s;
+}
+.head #bar3 {
+    border:solid 3px;
+    border-color: rgba(0,0,0,.5);
+    height: 200px;
+    width: 50px;
+    position: absolute;
+    left:65%;
+    top:35px;
+    background-color: rgba(0, 255, 0,1);
+    opacity: 0;
+    animation: upsideDown 4s ease 2s;
+    animation-fill-mode:forwards;
+    transition: all .75s;
+}
+.head #bar4 {
+    border:solid 3px;
+    border-color: rgba(0,0,0,.5);
+    height: 300px;
+    width: 50px;
+    position: absolute;
+    left:40%;
+    bottom:15px;
+    background-color: rgba(0, 255, 0,1);
+    opacity: 0;
+    animation: bottomUp 3s ease 2s;
+    animation-fill-mode:forwards;
+    transition: all 1.5s;
+}
+.head #bar5 {
+    border:solid 3px;
+    border-color: rgba(0,255,0,1);
+    height: 150px;
+    width: 50px;
+    position: absolute;
+    left:45%;
+    top:35px;
+    background-color: rgba(0, 0, 0,0);
+    opacity: 0;
+    animation: upsideDown 5s ease 1s;
+    animation-fill-mode:forwards;
+    transition: all .45s;
+}
+
+
+
+
+.mission {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+.mission #tree {
+    position: relative;
+    width: 400px;
+    z-index: -1;
+    transform: translateX(-60px) translateY(-5%);
+}
+.mission h1 {
+    position: absolute;
+    font-size: 50px;
+    
+    word-spacing: 30px;
+    transform: translateX(0px) translateY(4px);
+    text-shadow: 0px 5px 2px rgba(0,0,0,0.5);
+}
+.mission p {
+    position: relative;
+    text-align: center;
+    
+}
+.mission p span {
+    position: relative;
+    color:rgba(0,255,0,1);
+    font-weight: bold;
+}
+.stories {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background: url('../images/farmer.png');
+    
+    background-attachment:fixed;
+    
+}
+.stories .card {
+    width: 80%;
+    height: 70%;
+    display: flex;
+    flex-wrap:wrap;
+    align-items: left;
+    justify-content: left;
+    background-color: white;
+    box-shadow:0 0 10px rgba(0,0,0,.5);
+}
+.stories .card .cardtitle {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+}
+.stories .card .cardtitle h1 {
+    width: 50%;
+    font-size: 50px;
+    display: flex;
+    text-shadow: 0px 5px 2px rgba(0,0,0,0.5);
+}
+
+.stories .card .img {
+    width: 55%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    
+}
+.stories .card .cardtitle .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+    width: 50%;
+}
+.stories .card .storyTitle {
+    position:inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 55%;
+    
+    transform: translate(-200px,-200px);
+    height: 200px;
+    width: 200px;
+    box-shadow: 0 0 2px rgba(0,0,0,.5);
+    background-color: rgb(117, 248, 56);
+}
+.stories .card .storyTitle h4 {
+    font-size: 35px;
+    color: white;
+    text-shadow: 0 0 2px rgba(0,0,0,.5);
+}
+
+.crops {
+    height: 100vh;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.crops .card {
+    width:80%;
+    height: 70%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    display: flex;
+    align-items: right;
+    justify-content:right;
+    overflow: hidden;
+}
+.crops .card .cardTitle {
+    width: 45%;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.crops .card .img {
+    width: 55%;
+    height: 100%;
+    display: flex;
+}
+
+.crops .card .cardTitle h1 {
+    width: 50%;
+    font-size: 50px;
+    text-shadow: 0px 5px 2px rgba(0,0,0,0.5);
+}
+.crops .card .cardTitle .content {
+    display: flex;
+    height: 50%;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+}
+.crops .card .cropTitle {
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    
+    margin-left:calc( 80% - 44%);
+    margin-top: 70vh;
+    transform: translateY(-200px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(117, 248, 56);
+    box-shadow: 0 0 2px rgba(0,0,0,0.5);
+}
+.crops .card .cropTitle h4 {
+    font-size: 35px;
+    color: white;
+    text-shadow: 0 0 2px rgba(0,0,0,.5);
+}
+
+.training {
+    height: 120vh;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10%;
+}
+.training .card {
+    width: 80%; 
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    align-items: center;
+    
+    background: url('../images/desk.jpg');
+    background-size: cover;
+    box-shadow: 0 100px 50px rgba(85, 84, 84,.3);
+}
+.training .card h1 {
+    font-size: 50px;
+    text-shadow: 0px 5px 2px rgba(0,0,0,0.5);
+    margin-top: 5%;
+}
+.training .cardRow {
+    display: flex;
+    justify-content: space-between;
+    height: 50%;
+    width: 80%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin-top: 3%;
+    scroll-snap-type: x mandatory;
+    scroll-margin: 0 0 0 20px;
+    background-color: transparent;
+}
+.training .cardRow::-webkit-scrollbar {
+    display: none;
+}
+.training .cardRow .card0 {
+    margin: 20px;
+    min-width: 95%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid rgba(209, 209, 209,.6);
+    scroll-snap-stop: always;
+    scroll-snap-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5),inset 5px 5px 5px rgba(0,0,0,.1)
+    ,inset -5px -5px 5px rgba(0,0,0,.1);
+    background-color: rgba(0,0,0,.08);
+}
+.training .cardRow .card0:hover {
+    box-shadow: 0 0 5px rgba(0,0,0,0.5),inset 5px 5px 5px rgba(0,0,0,.1)
+    ,inset -5px -5px 5px rgba(0,0,0,.1);
+    background-color: transparent;
+}
+.training .cardRow .card0 img {
+    height: 200px;
+    width: 200px;
+    
+}
+.training .cardRow .card0 .facContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 50%;
+    flex-direction: column;
+}
+.training .cardRow .card0 .facContent h4 {
+    min-width: 70%;
+    height: 50%;
+    text-align: left;
+    display: flex;
+    align-items: center;
+
+}
+.training .cardRow .card0 .facContent p {
+    max-width: 70%;
+    height: 50%;
+    display: flex;
+    align-items:flex-end;
+    
+}
+.about {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.about .card {
+    width: 80%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.about .card h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    text-shadow: 0px 5px 2px rgba(0,0,0,0.5);
+}
+.about .card .txt {
+    width: 100%;
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+.about .card .txt h4 {
+    transform: translateX(calc(var(--x)/-60)) translateY(calc(var(--y)/-60));
+}
+.about .card .aboutFamily {
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    height: 200px;
+    
+}
+.about .card .aboutFamily .salesFamily {
+    width: 33%;
+    min-width: 300px;
+    height:200px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 5px rgba(0,0,0,.5);
+    background: url('../images/farm1.png');
+    background-attachment: fixed;
+    background-size: cover;
+}
+.about .card .aboutFamily .supportFamily {
+    width: 33%;
+    min-width: 300px;
+    height: 200px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 5px rgba(0,0,0,.5);
+    background: url('../images/farm1.png');
+    background-attachment: fixed;
+    background-size: cover;
+}
+.about .card .aboutFamily .surveyFamily {
+    width: 33%;
+    height: 200px;
+    background-color: white;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 5px rgba(0,0,0,.5);
+    background: url('../images/farm1.png');
+    background-attachment: fixed;
+    background-size: cover;
+}
+.about .card .aboutFamily h4 {
+    color: white;
+    position: absolute;
+    font-size: 20px;
+    text-shadow: 0 0 50px rgba(0,0,0,.5);
+}
+.about .card .aboutFamily .salesFamily:hover {
+    box-shadow: 0 10px 10px rgba(0,0,0,.5);
+}
+.about .card .aboutFamily .supportFamily:hover {
+    box-shadow: 0 10px 10px rgba(0,0,0,.5);
+}
+.about .card .aboutFamily .surveyFamily:hover {
+    box-shadow: 0 10px 10px rgba(0,0,0,.5);
+}
+.about .card .aboutFamily .salesFamily .contentFamilyA {
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 201, 0);
+    clip-path:inset(100% 0% 0% 0%);
+    transition: all .15s ease;
+}
+.about .card .aboutFamily .supportFamily .contentFamilyB {
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    clip-path:inset(100% 0% 0% 0%);
+    transition: all .15s ease;
+}
+.about .card .aboutFamily .surveyFamily .contentFamilyC {
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,201,0,1);
+    clip-path:inset(100% 0% 0% 0%);
+    transition: all .15s ease;
+}
+.about .card .aboutFamily .supportFamily:hover .contentFamilyB {
+    clip-path: inset(0% 0% 0% 0%);
+}
+.about .card .aboutFamily .salesFamily:hover .contentFamilyA {
+    clip-path: inset(0% 0% 0% 0%);
+}
+.about .card .aboutFamily .surveyFamily:hover .contentFamilyC {
+    clip-path: inset(0% 0% 0% 0%);
+}
+.about .card .aboutFamily p {
+    color: white;
+    max-width: 90%;
+}
+.about .card .aboutFamily .supportFamily .contentFamilyB p {
+    color: black;
+}
+.about .card .founderFamily {
+    height: 220px;
+    width: 40%;
+    background-color: rgba(0,0,0,.5);
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    
+}
+.about .card .founderFamily:hover {
+    box-shadow: 0 10px 10px rgba(0,0,0,0.5);
+}
+.about .card .founderFamily .Founder1 {
+    height: 120%;
+    width: 40%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:2px;
+    transform: rotateZ(-5deg);
+    
+    background: linear-gradient(to right, rgba(0, 255, 64, 0.712),transparent);
+}
+.about .card .founderFamily .Founder2 {
+    height: 120%;
+    width: 40%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:2px;
+    transform: rotateZ(-5deg);
+    
+    background-color: white;
+    background: linear-gradient(to right, rgba(0, 255, 221, 0.712),transparent);
+}
+.about .card .founderFamily .Founder3 {
+    height: 120%;
+    width: 40%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:2px;
+    transform: rotateZ(-5deg);
+    
+    background-color: white;
+    background: linear-gradient(to right, rgba(162, 0, 255, 0.712),transparent);
+}
+.about .card .founderFamily .Founder4 {
+    height: 120%;
+    width: 40%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:2px;
+    transform: rotateZ(-5deg);
+    
+    background-color: white;
+    background: linear-gradient(to right, rgba(0, 68, 255, 0.712),transparent);
+}
+@keyframes expan {
+    0% {
+        min-width: 25%;
+    }
+    
+    100% {
+        min-width: 80%;
+    }
+}
+.about .card .founderFamily .Founder1:hover {
+    animation: expan 1s ease;
+    animation-fill-mode: forwards;
+}
+.about .card .founderFamily .Founder2:hover {
+    animation: expan 1s ease-in-out;
+    animation-fill-mode: forwards;
+}
+.about .card .founderFamily .Founder3:hover {
+    animation: expan 1s ease-in-out;
+    animation-fill-mode: forwards;
+}
+.about .card .founderFamily .Founder4:hover {
+    animation: expan 1s ease-in-out;
+    animation-fill-mode: forwards;
+}
+.about .card .founderFamily p {
+    position: absolute;
+    transform: rotateZ(5deg);
+    min-width: 200px;
+    left: 20px;
+    
+}
+
+.contact {
+    height: 50vh;
+    background-color: rgba(0,0,0,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contact .card {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+}
+
+.contact .card .leftContact {
+    height: 100%;
+    width: 50%;
+    padding: 3%;
+    padding-left: 0%;
+    display: flex;
+    align-items: left;
+    
+    flex-direction: column;
+}
+.contact .card .midContact {
+    height: 100%;
+    width: 25%;
+    padding: 3%;
+    display: flex;
+    align-items: left;
+   
+    flex-direction: column;
+}
+.contact .card .rightContact {
+    height: 100%;
+    width: 25%;
+    padding: 3%;
+    display: flex;
+    align-items: left;
+   
+    flex-direction: column;
+}
+.contact .card p {
+    margin-top: 20px;
+    line-height: 25px;
+} 
+
+.login {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.48);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    pointer-events: none;
+    opacity: 0;
+    transition: 1s all;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login.switchon {
+    opacity: 1;
+    pointer-events: all;
+}
+.login .card {
+    width: 30%;
+    height: fit-content;
+    background-color:white;
+    min-width: 350px;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    padding: 2%;
+    border-radius: 5px;
+}
+.login .card h4 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10%;
+}
+.login .card h5 {
+    margin-left: 15px;
+    margin-bottom: 5px;
+}
+.login .card input {
+    height: 50px;
+    width: 100%;
+    outline: none;
+    border-radius: 25px;
+    border: 1px solid rgba(0,0,0,.5);
+    font-size: 15px;
+    padding: 12px;
+    cursor: text;
+}
+.login .card #submit {
+    margin-top: 10%;
+    cursor: pointer;
+    background-color: rgb(117, 248, 56);
+    font-weight: bolder;
+    border: 2px solid rgba(0, 255, 0,1);
+    box-shadow: 0 0 10px rgba(0, 255, 221, 0.712);
+}
+.login .card #submit:hover {
+    background-color: rgb(103, 253, 33);
+    box-shadow: 0 0 25px rgba(0, 255, 221, 0.712);
+}
+.anim {
+    background-color: rgba(255,255,255,.7);
+    top:0;
+    left: 0;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+}
+.anim.load {
+    opacity: 1;
+    pointer-events: all;
+}
+.anim img {
+    height: 80px;
+    width: 80px;
+    animation: axe 1.5s ease infinite;
+    transform-origin:top right;
+}
+@keyframes axe {
+    0% {
+        transform: rotateZ(180deg);
+    }
+    55% {
+        transform: rotateZ(180deg);
+    }
+    60% {
+        transform: rotateZ(200deg);
+    }
+    70% {
+        transform: rotateZ(0deg);
+    }
+    75% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(180deg);
+    }
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"><title>Farm Plus</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/inapp4.css') }}">
+</head>
+<body>
+    <nav class="navbar1">
+        <div class="logo">
+            <img src="{{ url_for('static',filename='images/logo.svg') }}"  id="logo">
+            <h4>Farm Plus</h4>
+        </div>
+        <div class="search">
+            <img src="{{ url_for('static',filename='images/search.png') }}" id="logoaxe">
+            <form action="/search">
+            <input type="text" id="search" placeholder="Search" name="query"/>
+            </form>
+        </div>
+    </nav>
+    <nav class="navbar2">
+        {% block nav2 %} {% endblock %}
+    </nav>
+    {% block content %}
+    {% endblock %}
+    <div class="anim">
+        <img src="{{ url_for('static',filename='images/axe.png') }}" alt="">
+        <h1>Please Wait..</h1>
+    </div>
+
+    {% block screencard %} 
+    {% endblock %}
+    
+    
+        {% block fullstory %}
+        {% endblock %}
+    
+</body>
+<script>
+    //form anim
+    var sd1=0;
+    function showdet() {
+        sd1++;
+        if(sd1%2==1) {
+            var s='.inforight form #in';
+            for(var i=1;i<8;i++) {
+                var inx=document.querySelectorAll(s+String(i));
+                inx[0].classList.add('shown');
+            }
+            var submit=document.querySelectorAll('.information .inforight form #submit');
+            submit[0].classList.add('shown');
+            var head=document.querySelectorAll('.inforight .details');
+            head[0].classList.add('shown'); 
+        }
+        else {
+            var s='.inforight form #in';
+            for(var i=1;i<8;i++) {
+                var inx=document.querySelectorAll(s+String(i));
+                inx[0].classList.remove('shown');
+            }
+            var submit=document.querySelectorAll('.information .inforight form #submit');
+            submit[0].classList.remove('shown');
+            var head=document.querySelectorAll('.inforight .details');
+            head[0].classList.remove('shown');
+        }
+        
+        /*var in1=document.querySelector('.inforight form #in1');
+        in1.classList.add('shown');*/
+        
+    }
+    var sd2=0;
+    function showdet1() {
+        sd2++;
+        if(sd2%2==1) {
+            var s='.inforight form #in';
+            for(var i=1;i<8;i++) {
+                var inx=document.querySelectorAll(s+String(i));
+                inx[1].classList.add('shown');
+            }
+            var submit=document.querySelectorAll('.information .inforight form #submit');
+            submit[1].classList.add('shown');
+            var head=document.querySelectorAll('.inforight .details');
+            head[1].classList.add('shown');
+        }
+        else {
+            var s='.inforight form #in';
+            for(var i=1;i<8;i++) {
+                var inx=document.querySelectorAll(s+String(i));
+                inx[1].classList.remove('shown');
+            }
+            var submit=document.querySelectorAll('.information .inforight form #submit');
+            submit[1].classList.remove('shown');
+            var head=document.querySelectorAll('.inforight .details');
+            head[1].classList.remove('shown');
+        }
+        
+        /*var in1=document.querySelector('.inforight form #in1');
+        in1.classList.add('shown');*/
+        
+    }
+    function requestView(s) {
+        /*var id=document.querySelectorAll('.rightcontainer .card div #postid');
+        id.forEach((idx)=>{
+            console.log(idx.textContent);
+        });*/
+        console.log(s);
+        window.location.href=`/fullstory/${s}`;
+    }
+
+
+
+    //axe animation
+function axe() {
+    document.querySelector('.anim').classList.add('load');
+}
+    //creating new story
+var startWriting=document.querySelector('.rightcontainer .card #newStory');
+    var storyInputWindow=document.querySelector('.screencard');
+    startWriting.addEventListener('click',function() {
+        storyInputWindow.classList.add('newstory');
+    });
+    storyInputWindow.addEventListener('click',function(e){
+        if(e.target.classList.contains('screencard'))
+        storyInputWindow.classList.remove('newstory');
+    });
+
+    //viewing full story
+    function viewFullStory() {
+        axe();
+        window.alert("You are viewing the same..Sorry, incomplete functionaltiy");
+        /*console.log(window.scrollY);
+        var showcard=document.querySelector('.showcard');
+        showcard.style.setProperty('--top',window.scrollY+"px");
+        showcard.classList.add('showstory');*/
+    }
+    /*function closeFullStory() {
+        var showcard=document.querySelector('.showcard');
+        showcard.classList.remove('showstory');
+    }*/
+</script>
+</html>

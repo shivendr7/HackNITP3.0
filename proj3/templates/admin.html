@@ -1,0 +1,87 @@
+{% extends 'inapp.html' %}
+{% block title %}Admin{% endblock %}
+
+{% block nav2 %}
+<ul>
+    
+    <li><a onclick="axe()" class="active" href="/dash">Admin</a></li>
+    
+</ul>
+{% endblock %}
+
+{% block content %}
+<div class="leftcontainer">
+    {% block dashboard %} {% endblock %}
+    
+    <div class="card">
+        <h5>Top tags</h5>
+        <div class="tags">
+            <li><a href="#">#rohit</a></li>
+            <li><a href="#">#mohit</a></li>
+            <li><a href="#">#rajesh</a></li>
+        </div>
+        <div class="div"></div>
+        <div class="expand">
+            <li><a href="#">Explore</a></li>
+        </div>
+    </div>
+</div> {% block right %} {% endblock %}
+
+{% endblock %}
+
+{% block screencard %}
+<div class="screencard">
+    <div class="card">
+        Write a new story..
+        <br><br>
+        <form  action="#" method="POST" enctype=multipart/form-data>
+            <div>Include an Image(optional)</div>
+            <input id="imginputbtn" type="file" name="file"/>
+            <br><br>
+            <div>Title</div>
+            <textarea name="title" id="storytitle"></textarea>
+            <br>
+            <br>
+            <div>Content</div>
+            <textarea name="content" id="storycontent"></textarea>
+            <br><br>
+            <div>suggest this for</div>
+            <select name="suggestType">
+                <option value="None">None</option>
+                <option value="Bhagalpur">Bhagalpur</option>
+                <option value="Chapra">Chapra</option>
+                <option value="Darbhanga">Darbhanga</option>
+                <option value="Dehri">Dehri</option>
+                <option value="Forbesganj">Forbesganj</option>
+                <option value="Gaya">Gaya</option>
+                <option value="Jamui">Jamui</option>
+                <option value="Motihari">Motihari</option>
+                <option value="Muzaffarpur">Muzaffarpur</option>
+                <option value="Patna">Patna</option>
+                <option value="Purnea">Purnea</option>
+                <option value="Raxaul">Raxaul</option>
+                <option value="Sabour">Sabour</option>
+                <option value="Supaul">Supaul</option>
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">september</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+                
+
+            </select>
+            <br>
+            <br>
+            <input id="storysubmit" type="submit" value="upload"/>
+        </form>
+        
+    </div>
+</div> 
+{% endblock %}

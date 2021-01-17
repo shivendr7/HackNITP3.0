@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <title>Farm Plus</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/home.css') }}">
+</head>
+<body>
+    <nav class="header">
+        <div class="logo">
+        <img src="{{ url_for('static',filename='images/logo.svg') }}">
+        <h4>Farm Plus</h4>
+        </div>
+        {% with message=get_flashed_messages() %}
+            {% if message %}
+                {% for m in message %}
+                    <p>{{m}}</p><br>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <ul>
+            <li> <a href="#M"> Vision</a></li>
+            <li> <a href="#S">Stories</a></li>
+            <li> <a href="#Cr">Crops</a></li>
+            <li> <a href="#T">Training</a></li>
+            <li> <a href="#A">About</a></li>
+            <li> <a href="#">Contacts</a></li>
+            <li> <a href="#" class="active">{{ LorD }}</a></li>
+        </ul>
+    </nav>
+    <section class="head">
+        <div class="logoContainer">
+            <div class="logo">
+                <a href="#"><img src="{{ url_for('static',filename='images/fb.png') }}" alt=""></a></div>
+            
+            <div class="logo">
+                <a href="#"><img src="{{ url_for('static',filename='images/yt.png') }}" alt=""></a></div>
+            
+            <div class="logo">
+                <a href="#"><img src="{{ url_for('static',filename='images/insta.png') }}" alt=""></a></div>
+            
+        </div>
+        
+        <img  class="headIm" src="{{ url_for('static',filename='images/f3.png') }}" alt="">
+        <img id="title0" src="{{ url_for('static',filename='images/title0.svg') }}" alt="">
+        <p><a href="#">Market</a>  |  <a href="#">News</a></p>
+        <div class="btn">Explore</div>
+        <div class="bars" id="bar1"></div>
+        <div class="bars" id="bar2"></div>
+        <div class="bars" id="bar3"></div>
+        <div class="bars" id="bar4"></div>
+        <div class="bars" id="bar5"></div>
+        <div class="bars" id="bar6"></div>
+    </section>
+    
+    <section class="mission" id="M">
+        <img id="tree" src="{{ url_for('static',filename='images/tree.png') }}" alt="">
+        <h1>ONE MISSION</h1>
+        <p>Our project is a ML based website where our mission is to provide useful information to Farmers which may <br>
+             encourage them to grow few commercial crops which is not easily grown in Bihar. Our Website will suggest farmers <br>
+              that which crop is better option to be grown according to his/her area.  Our website will also suggest
+              <br> the most suitable month to grow specific crops including their 
+              
+              traditional method as well as  their artificial <br> methods of plantation.
+
+
+
+            Through our project, we want to contribute to the improvement of <br>agricultural productivity  in the livelihoods of the rural communities in Bihar.<br><span>
+                   "For the ability of producing life from soil"
+               </span><br><br>Rohit Kumar, Founder
+            </p>
+        
+    </section>
+    <section class="stories" id="S">
+        
+        <div class="card" >
+            <div class="img">
+                <img src="{{ url_for('static',filename='images/farmer2.jpg') }}" alt="">
+            </div>
+            <div class="cardtitle" ><h1>SUCCESS<br>STORIES</h1>
+                <div class="content"><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab deserunt fugit quam! Mollitia, nisi exercitationem doloremque architecto aspernatur reiciendis itaque similique adipisci esse ipsa possimus id quas alias, laboriosam corrupti?</p></div>
+            </div>
+            <div class="storyTitle">
+                <h4>TITLE</h4>
+            </div>
+            </div>
+    </section>
+    <section class="crops" id="Cr">
+        <div class="card">
+            <div class="cardTitle"><h1>IN OUR<br>GARDEN</h1>
+            <div class="content"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore aut, accusantium modi, necessitatibus consequatur alias facilis iste atque doloribus ipsum unde repellendus dolorem. Tempore velit incidunt est repudiandae? Sit, tempora.</p></div>
+            </div>
+            <div class="img">
+                <img src="{{ url_for('static',filename='images/kiwi.png') }}" alt="">
+            </div>
+            <div class="cropTitle"><h4>CROP</h4></div>
+        </div>
+        
+    </section>
+    <section class="training" id="T">
+        <div class="card">
+            <h1>TRAINING AND FACILITIES</h1>
+            <div class="cardRow">
+                <div class="card0" id="fac1">
+                    <img src="{{ url_for('static',filename='images/land.png') }}" alt="">
+                    <div class="facContent">
+                        
+                        <p>Our Systems provide techniques and requirements for
+                             growing your favourite crops. Assistance related to
+                             cultivation and sale.
+                        </p>
+                        <h4>Training</h4>
+                    </div>
+                </div>
+                <div class="card0" id="fac2">
+                    <img src="{{ url_for('static',filename='images/learn.png') }}" alt="">
+                    <div class="facContent">
+                        
+                        <p>Reliable installations of optimal conditions in your
+                            owned land. EMI upto first sale available.
+                        </p>
+                        <h4>Facilities</h4>
+                    </div>
+                </div>
+                <div class="card0" id="fac3"></div>
+            </div>
+        </div>
+        
+    </section>
+    <section class="about" id="A">
+        <div class="card">
+            <h1>WE AT FARM PLUS</h1>
+            <div class="txt">
+                <h4>F</h4><h4>A</h4><h4>M</h4><h4>I</h4><h4>L</h4><h4>Y</h4>
+            </div>
+            <div class="aboutFamily">
+                <div class="salesFamily">
+                    <h4>Marketing and Sales</h4>
+                    <div class="contentFamilyA">
+                        <p>Know the prices of your favourite crops in different
+                             markets. Get correct value for your crops in the 
+                             Farm's escrow.
+                        </p>
+                    </div>
+                    
+                </div>
+                <div class="supportFamily">
+                    <h4>Installation and Support</h4>
+                    <div class="contentFamilyB">
+                        <p>Get our 6x5 offline available team support at your
+                             farm. Discussion and Stories are available 24x7.
+                             <br>Happy to HELP:)</p>
+                    </div>
+                </div>
+                <div class="surveyFamily">
+                    <h4>Survey and Archeology</h4>
+                    <div class="contentFamilyC">
+                        <p>Crop details, cultivation and condition check changes
+                            frequently every year. Get all of those at Farm Plus. 
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="txt">
+                <h4>F</h4>
+                <h4>O</h4>
+                <h4>U</h4>
+                <h4>N</h4>
+                <h4>D</h4>
+                <h4>E</h4>
+                <h4>R</h4>
+                <h4>S</h4>
+            </div>
+            <div class="founderFamily">
+                <div class="Founder1">
+                    <p>Rohit Kumar<br>Captain, ML</p>
+                </div>
+                <div class="Founder2">
+                    <p>Rajesh Kumar<br>ML, Model Management</p>
+                </div>
+                <div class="Founder3">
+                    <p>Mohit Nayan Singh<br>ML, Model Management</p>
+                </div>
+                <div class="Founder4">
+                    <p>Shivendra P Singh<br>Web-D, Database</p>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    <section class="contact">
+        <div class="card">
+            <div class="leftContact">
+                
+                <h2>Farm Plus</h2>
+                <p>We are a Indian based company who aims at solving the issues 
+                    to the farmers in the region of Bihar. Help them make the 
+                    correct prices for their crops. We also facilitate foreign crops
+                    cultivation in our labs.<br><br>
+                    Main office soon to be built near Patna University.<br><br><br>
+                    Copyright ©2021 FarmPlus.com<br>
+                    All rights reserved.
+                </p>
+            </div>
+            <div class="midContact">
+                <h2>Company</h2>
+                <p>About<br>Privacy Policy<br>
+                Terms of Service<br>FAQ<br>
+            Contact Us</p>
+            </div>
+            <div class="rightContact">
+                <h2>Access</h2>
+                <p>Vision<br>Success Stories<br>
+                Crops we grow<br>Training by us<br>
+                Products and Facilities<br>Our Team
+            </p>
+            </div>
+        </div>
+    </section>
+    <div class="login">
+        <div class="card">
+            <form action="/" method="POST">
+                <h4>Login</h4>
+                <h5>Name</h5>
+                
+                <input type="text"  placeholder="Name" name="name"/>
+                <br><br>
+                <h5>Email</h5>
+                
+                <input type="text"  placeholder="Email" name="email"/>
+                <br><br>
+                <h5>Residence</h5>
+                
+                <input type="text"  placeholder="Farm location" name="farm"/>
+                <br><br>
+                <h5>Password</h5>
+                <input type="password" placeholder="Password" name="password"/>
+                <br><br>
+                
+                <input onclick="axe()" id="submit" type="submit" value="Log in"/>
+            </form>
+        </div>
+    </div>
+    <div class="anim">
+        <img src="{{ url_for('static',filename='images/axe.png') }}" alt="">
+        <h1>Please Wait..</h1>
+    </div>
+</body>
+</body>
+<script src="{{ url_for('static',filename='home.js') }}"></script>
+</html>

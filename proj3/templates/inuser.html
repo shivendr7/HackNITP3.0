@@ -1,0 +1,76 @@
+{% extends 'inapp.html' %}
+{% block title %}User{% endblock %}
+
+{% block nav2 %}
+<ul>
+    <li><a onclick="axe()" href="/newsletter">Newsletter</a></li>
+    <li><a onclick="axe()" href="/facilities">Facilities</a></li>
+    <li><a onclick="axe()" href="/about">About</a></li>
+    <li><a onclick="axe()" href="/harvest">Harvest</a></li>
+    <li><a onclick="axe()" href="/feed">Feed</a></li>
+    <li><a onclick="axe()" class="active" href="/dash">User</a></li>
+    
+</ul>
+{% endblock %}
+
+{% block content %}
+
+<div class="leftcontainer">
+    <div class="card">
+        <h5>Profile tags</h5> 
+        <div class="tags">
+            <li><a href="">#rammanis</a></li>
+            <li><a href="">#wheat</a></li>
+            <li><a href="">#arah</a></li>
+        </div>
+        <div class="div"></div>
+        <div class="expand" id="edit">
+            <li><a href="">Edit Profile</a></li>
+        </div>
+    </div>
+    <div class="card">
+        {% block navmenu %} {% endblock %}
+        
+    </div>
+    <div class="card">
+        <h5>Recents</h5>
+        <div class="tags">
+            <li><a href="#">#kiwi</a></li>
+            <li><a href="#">#dragonfruit</a></li>
+            <li><a href="#">#syntheticfarming</a></li>
+            <li><a href="#">#impartialgrowth</a></li>
+        </div>
+        <div class="div"></div>
+        <div class="expand" id="explore">
+            <li><a href="#">Explore</a></li>
+        </div>
+    </div>
+</div>
+
+{% block right %} 
+{% endblock %}
+
+{% endblock %}
+
+{% block screencard %}
+<div class="screencard">
+    <div class="card">
+        Write a new story..
+        <br><br>
+        <form  action="#"  method="POST" enctype=multipart/form-data>
+            <div>Include an Image(optional)</div>
+            <input id="imginputbtn" type="file" name="file"/>
+            <br><br>
+            <div>Title</div>
+            <textarea name="title" id="storytitle"></textarea>
+            <br>
+            <br>
+            <div>Content</div>
+            <textarea name="content" id="storycontent"></textarea>
+            <br><br>
+            <input id="storysubmit" type="submit" value="upload"/>
+        </form>
+        
+    </div>
+</div>
+{% endblock %}

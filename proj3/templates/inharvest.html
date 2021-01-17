@@ -1,0 +1,78 @@
+{% extends 'inapp.html' %}
+{% block title %}Feed{% endblock %}
+
+{% block nav2 %}
+<ul>
+    <li><a onclick="axe()" href="/newsletter">Newsletter</a></li>
+    <li><a onclick="axe()" href="/facilities">Facilities</a></li>
+    <li><a onclick="axe()" href="/about">About</a></li>
+    <li><a onclick="axe()" class="active" href="/harvest">Harvest</a></li>
+    <li><a onclick="axe()" href="/feed">Feed</a></li>
+    <li><a onclick="axe()" href="/dash">User</a></li>
+    
+</ul>
+{% endblock %}
+
+{% block content %}
+
+    <div class="leftcontainer">
+        <div class="card">
+            <h5>Recents</h5>
+            <div class="tags">
+                <li><a href="#">#kiwi</a></li>
+                <li><a href="#">#dragonfruit</a></li>
+                <li><a href="#">#syntheticfarming</a></li>
+                <li><a href="#">#impartialgrowth</a></li>
+            </div>
+            <div class="div"></div>
+            <div class="expand" id="explore">
+                <li><a href="#">Explore</a></li>
+            </div>
+        </div>
+    </div>
+    <div class="rightcontainer">
+        <form id="sort" action="#">
+            <h6>Sort by:</h6>
+            <select name="sort" >
+                <option value="Latest">Latest</option>
+                <option value="Popular">Popular</option>
+                <option value="Importance">Importance</option>
+            </select>
+            <input type="submit" value="Sort"/>
+        </form>
+        {% if harvests and time_list %}
+    {% for n,t in harvests|zip(time_list) %}
+    <div class="card">
+        Admin <div>{{t}}</div><br>
+        {% if n.img %}
+        <img id="storyImg" src="{{ url_for('static',filename='uploads/'+n.img) }}" alt="">
+        {% endif %}
+        <br>
+        <h3>{{n.title}}</h3>
+        
+        <br>
+        {{n.content}}<br>
+        <div onclick="viewFullStory()" id="fullStory"><span>View full story..{{n.id}}</span></div>
+        <br>
+        <div class="cardsentiment">
+            <div>
+                {% if n.tag %}
+                Tags:
+                <span id="tag">{{n.tag}}</span>
+                {% else %}
+                All stopwords
+                {% endif %}
+            </div>
+            <div>
+                Sentiment:
+                <span id="sentival">-0.23</span>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+        
+    </div>
+
+{% endblock %}
+

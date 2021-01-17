@@ -1,0 +1,15 @@
+<form action="#" method="POST" enctype=multipart/form-data>
+    <input type="file" name="file"/>
+    <textarea name="textarea" id="" cols="30" rows="10"></textarea>
+    <input type="submit" value="upload"/>
+</form>
+{% with message=get_flashed_messages() %}
+            {% if message %}
+                {% for m in message %}
+                    <p>{{m}}</p><br>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+{% if filename %}
+<img src="{{ url_for('static',filename='uploads/'+filename+'.'+ext) }}" alt="">
+{% endif %} 

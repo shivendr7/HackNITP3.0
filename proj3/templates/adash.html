@@ -1,0 +1,46 @@
+{% extends 'admin.html' %}
+{% block dashboard %}
+<div class="card">
+    <ul>
+        <li><a class="active" href="/adash">Dashboard</a></li>
+        <li><a href="/anews">News</a></li>
+        <li><a href="/aharvest">Harvest</a></li>
+        <li><a href="/afacilities">Facility</a></li>
+    </ul>
+</div>
+{% endblock %}
+
+{% block right %}
+<div class="rightcontainer">
+    <div class="card intro">
+        <div>
+            Logged in as <span>Admin</span>
+        </div>
+        <div>
+            Email <span> admin@farmplus.com</span>
+        </div>
+    </div>
+    <div class="card">
+        <h3>Sentiments</h3>
+        <br>
+        <p>We keep a track of sentiments related to your model, your facilities
+             and the harvesting techniques so that you can track your progress.
+              You can view all those here.
+        </p>
+        <div class="sentiments">
+            <div class="senti">Your model results 
+                <span id="story">0.36</span>
+            </div>
+            <div class="senti">Users' average sentiments
+                <span id="onstory">0.12</span>
+            </div>
+            <div class="senti">On facilities
+                <span id="laststory">-0.3</span>
+            </div>
+            <div class="senti">On Harvest techniques
+                <span id="onlaststory">-0.9</span>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

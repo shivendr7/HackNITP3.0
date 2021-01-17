@@ -1,0 +1,44 @@
+{% extends 'inapp.html' %}
+{% block title %}Feed{% endblock %}
+
+{% block nav2 %}
+<ul>
+    <li><a href="/newsletter">Newsletter</a></li>
+    <li><a href="/facilities">Facilities</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/harvest">Harvest</a></li>
+    <li><a href="/feed">Feed</a></li>
+    <li><a href="/dash">User</a></li>
+    <li><a class="active" href="#">Story</a></li>
+    
+</ul>
+{% endblock %}
+
+{% block fullstory %}
+<div class="showcard">
+    <div class="card">
+        Username <div>{{time}}</div>
+        {% if post.img %}
+        <img id="storyImgShow" src="{{ url_for('static',filename='images/'+post.img) }}" alt="">
+        {% endif %}
+        <h3>{{post.title}}</h3>
+        <br>
+        {{post.content}}<br><br>
+        <div class="cardsentiment">
+            <div>
+                {% if post.tag %}
+                Tags:
+                
+                <span id="tag">{{post.tag}}</span>
+                {% else %}
+                All stopwords
+                {% endif %}
+            </div>
+            <div>
+                Sentiment:
+                <span id="sentival">-0.23</span>
+            </div>
+        </div>
+    </div> 
+</div>
+{% endblock %}
