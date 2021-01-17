@@ -1,0 +1,292 @@
+* {
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    cursor: default;
+}
+
+body {
+    background-color: rgba(230,230,230,.1);
+    display: flex;
+}
+.card {
+    background-color: white;
+    
+    border: 1px solid;
+    min-height: fit-content;
+    overflow: hidden;
+    border-color: rgba(0,0,0,0.2);
+    box-shadow: 0 5px 5px rgba(0,0,0,0.15);
+}
+
+.navbar1 {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top:0;
+    padding: 20px;
+    padding-left: 10%;
+    padding-right: 10%;
+    background-color: white;
+}
+.navbar1 .logo {
+    display: flex;
+    margin-top: 13px;
+}
+.navbar1 .logo #logo {
+    width: 50px;
+    height: 50px;
+    margin-top: -10px;
+}
+.navbar1 .logo h4 {
+    position: absolute;
+    margin-left:30px;
+    font-size: 20px;
+    text-shadow:0.5px 0 1px rgba(0,0,0,0.5);
+    
+}
+.navbar1 .search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
+}
+.navbar1 .search #logoaxe {
+    width: 40px;
+    height: 40px;
+    
+}
+.navbar1 .search #search {
+    height:40px;
+    border-radius: 20px;
+    border: 1px solid;
+    border-color: rgba(0,0,0,0.5);
+    padding: 10px;
+    cursor:text;
+    font-size: 15px;
+    max-width: 200px;
+    outline: none;
+}
+.navbar1 .search #search:hover {
+    background-color: rgba(230,230,230);
+}
+.navbar2 {
+    width: 100%;
+    position: fixed;
+    top:10vh;
+    display: flex;
+    align-items: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    border-bottom: 1px solid ;
+    border-color:rgba(0,0,0,0.5);
+    padding-bottom: 3px;
+    padding-top: 3px;
+    background-color: whitesmoke;
+}
+.navbar2 ul {
+    display: flex;
+    
+}
+.navbar2 ul li {
+    list-style: none;
+    
+    padding-right: 30px;
+}
+.navbar2 ul li a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    font-size: 12px;
+    text-shadow: .5px 0 0 rgba(0,0,0,0.5);
+    padding: 5px;
+    transition: all .5s;
+}
+.navbar2 ul li a:hover {
+    text-shadow: 0px 0px 3px rgba(117, 248, 56,1);
+}
+.navbar2 ul li  .active {
+    background-color: rgba(117, 248, 56,.7);
+}
+.leftcontainer {
+    margin-top: 15vh;
+    display: flex;
+    flex-direction: column;
+    min-height: fit-content;
+    align-items:flex-end;
+    justify-content:flex-start;
+    width: 25%;
+}
+.leftcontainer .card {
+    width: 59%;
+    margin-right: 10px;
+    
+    margin-bottom: 10px;
+}
+.leftcontainer .card h5 {
+    padding-top: 15px;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: lighter;
+}
+.leftcontainer .card .tags {
+    width: 100%;
+}
+.leftcontainer .card .tags li {
+    list-style: none;
+    width: 100%;
+    display: flex;
+}
+.leftcontainer .card .tags li a {
+    font-size: 12px;
+    font-weight: bolder;
+    color: black;
+    text-decoration: none;
+    padding: 5px;
+    padding-left: 15px;
+    width: 100%;
+    cursor: pointer;
+}
+.leftcontainer .card .tags li a:hover {
+    background-color: rgba(180,180,180);
+}
+.leftcontainer .card .div {
+    width: 90%;
+    margin-left: 5%;
+    height: 1px;
+    background-color: rgba(0,0,0,0.5);
+    margin-top: 5px;
+}
+.leftcontainer .card .expand {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.leftcontainer .card .expand:hover {
+    background-color: rgba(180,180,180);
+}
+.leftcontainer .card .expand li {
+    list-style: none;
+}
+.leftcontainer .card .expand li a {
+    font-size: 12px;
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+    cursor: pointer;
+}
+.leftcontainer .card ul li {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    
+}
+.leftcontainer .card ul li a {
+    color: black;
+    text-decoration: none;
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    cursor: pointer;
+}
+.leftcontainer .card ul li a:hover {
+    background-color: rgba(180,180,180);
+}
+.leftcontainer .card ul li .active {
+    background-color: rgba(117, 248, 56,.9);
+}
+.leftcontainer .card ul li .active:hover {
+    background-color: rgba(117, 248, 56,1);
+}
+
+.rightcontainer {
+    margin-top: 15vh;
+    min-height: fit-content;
+    display: flex;
+    width: 75%;
+    flex-direction: column;
+    align-items: flex-start;
+    
+}
+.rightcontainer .card {
+    
+    width: 86%;
+    margin-left: 10px;
+    padding-top: 25px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    padding: 15px;
+}
+.rightcontainer .intro {
+    display: flex;
+    padding:12px;
+    justify-content: space-between;
+    
+}
+.rightcontainer .card div {
+    font-size: 12px;
+}
+.rightcontainer .card span {
+    font-weight: bolder;
+}
+.rightcontainer .card .sentiments {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100px;
+    width: 100%;
+    
+}
+.rightcontainer .card .sentiments .senti {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.rightcontainer .card .sentiments .senti span {
+    font-size: 20px;
+    font-weight: bolder;
+}
+.rightcontainer .card .line {
+    width: 90%;
+    height: .9px;
+    background-color: rgba(0,0,0,0.5);
+    margin-left: 5%;
+    margin-bottom: 15px;
+}
+.rightcontainer .card .expand {
+    width: 100%;
+    height: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.rightcontainer .card .expand li {
+    list-style: none;
+    display: flex;
+    width: 100%;
+}
+.rightcontainer .card .expand li:hover {
+    background-color: rgba(180,180,180);
+}
+.rightcontainer .card .expand li a {
+    font-size: 12px;
+    text-decoration: none;
+    color: black;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    cursor: pointer;
+    font-weight: bolder;
+}

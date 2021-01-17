@@ -1,0 +1,28 @@
+{% extends 'inuser.html' %}
+{% block navmenu %}
+<ul>
+    <li><a onclick="axe()" href="/dash">Dashboard</a></li>
+    <li><a onclick="axe()" href="/cultivate">Cultivate</a></li>
+    <li><a onclick="axe()" href="/history">History</a></li>
+    <li><a onclick="axe()" href="/story">Stories</a></li>
+    <li><a onclick="axe()" class="active" href="/account">Account</a></li>
+</ul>
+{% endblock %}
+{% block right %}
+<div class="rightcontainer">
+    <div class="card">
+        <h3>Profile</h3><br>
+        <div>Name</div> {{user.name}}
+        <br><br>
+        <div>Email</div> {{user.email}}
+        <br><br>
+        <div>Residence</div> {{user.residence}}
+        <br><br><br>
+        <div class="expand" id="apply">
+            <li><a href="#">Change Password</a></li>
+            <li><a href="#">Logout</a></li>
+        </div>
+    </div>
+    
+</div>
+{% endblock %}

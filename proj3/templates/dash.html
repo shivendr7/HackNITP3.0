@@ -1,0 +1,65 @@
+{% extends 'inuser.html' %}
+{% block navmenu %}
+<ul>
+    <li><a onclick="axe()" class="active" href="/dash">Dashboard</a></li>
+    <li><a onclick="axe()" href="/cultivate">Cultivate</a></li>
+    <li><a onclick="axe()" href="/history">History</a></li>
+    <li><a onclick="axe()" href="/story">Stories</a></li>
+    <li><a onclick="axe()" href="/account">Account</a></li>
+</ul>
+{% endblock %}
+{% block right %}
+<!--name email storysentival onstorysentival laststorysentival onlaststorysentival-->
+<div class="rightcontainer">
+    <div class="card intro">
+        <div>
+            Logged in as <span>{{ name }}</span>
+        </div>
+        <div>
+            Email <span> {{ email }}</span>
+        </div>
+    </div>
+    <div class="card">
+        <h3>Sentiments</h3>
+        <br>
+        <p>We keep a track of sentiments related to your stories, your comments
+             and the responses to your stories so that we could improve our
+              facilities progressively. You can view all those here.
+        </p>
+        <div class="sentiments">
+            <div class="senti">Your stories 
+                <span id="story">{{ storysentival }}</span>
+            </div>
+            <div class="senti">On your stories
+                <span id="onstory">{{ onstorysentival }}</span>
+            </div>
+            <div class="senti">Your last story
+                <span id="laststory">{{ laststorysentival }}</span>
+            </div>
+            <div class="senti">On your last story
+                <span id="onlaststory">{{ onlaststorysentival }}</span>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <h3>Facilities you use</h3>
+        <br>
+        <p>No item to show</p>
+        <br>
+        <div class="line"></div>
+        <div class="expand" id="facilities">
+            <li><a href="#">Facilities</a></li>
+        </div>
+    </div>
+    <div class="card">
+        <h3>Applications</h3>
+        <br>
+        <p>Yet not applied</p>
+        <br>
+        <div class="line"></div>
+        <div class="expand" id="apply">
+            <li><a href="#">Apply</a></li>
+        </div>
+    </div>
+</div>
+{% endblock %}

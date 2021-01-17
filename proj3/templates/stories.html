@@ -1,0 +1,52 @@
+{% extends 'inuser.html' %}
+{% block navmenu %}
+<ul>
+    <li><a onclick="axe()" href="/dash">Dashboard</a></li>
+    <li><a onclick="axe()" href="/cultivate">Cultivate</a></li>
+    <li><a onclick="axe()" href="/history">History</a></li>
+    <li><a onclick="axe()" class="active" href="/story">Stories</a></li>
+    <li><a onclick="axe()" href="/account">Account</a></li>
+</ul>
+{% endblock %}
+{% block right %}
+<div class="rightcontainer">
+    <div class="card">
+        <div><span>Write a new story..</span></div>
+        <a id="newStory" href="#">Start writing..</a>
+    </div>
+    {% if stories %}
+        {% for story,time_t in stories|zip(time_list) %}
+        <div class="card">
+            {{story.user}} <div>{{time_t}}</div><br>
+            {% if story.img %}
+                <img id="storyImg" src="{{ url_for('static',filename='uploads/'+story.img) }}" alt="">
+            {% endif %}
+            <br>
+            <h3>{{story.title}}</h3>
+         
+            <br>
+            {{story.content}}
+            <br>
+            <div onclick="viewFullStory()" id="fullStory"><span>View full story..{{story.id}}</span></div>
+            <br>
+            <div class="cardsentiment">
+                <div>
+                    {% if story.tag %}
+                    Tags:
+                    <span id="tag">{{story.tag}}</span>
+                    {% else %}
+                    All stopwords
+                    {% endif %}
+                </div>
+                <div>
+                    Sentiment:
+                    <span id="sentival">-0.23</span>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    
+        <a href="#" id="viewflex">View More</a>
+    {% endif %}
+</div>
+{% endblock %}
