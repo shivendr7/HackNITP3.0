@@ -21,3 +21,6 @@ Please note: Due to hustle we aren't able to include some functionalities in the
 So to logout please close the browser[the sessions are not made permanent]
 
 [[PPT LINK:-  https://docs.google.com/presentation/d/1CcBJPQSw9WUDDG_trQASEezpYxz25OKmFPxCydSZB84/edit?usp=sharing  ]]
+
+VIDEO LINK FIRST PART : https://drive.google.com/file/d/1ee8QTB-kAvWZi3oIpqINm-mp5n6l6hKP/view?usp=sharing
+VIDEO LINK SECOND PART : https://drive.google.com/file/d/1AkM_cxqq1t5Q5_gKAcypT9VUW-p51Y_4/view?usp=sharing
