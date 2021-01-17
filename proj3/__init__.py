@@ -546,11 +546,37 @@ def facilities():
     revfacs=facs[::-1]
     time_list=getTimeList(revfacs)
     return render_template('infacilities.html',facilities=revfacs,time_list=time_list)
+"""
 
-@app.route('/fullstory')
 def fullstory():
     
     return render_template('fullstory.html')
+"""
+
+@app.route('/fullstory/<s>')
+def fullstory(s):
+    if s[0]=='f':
+        s=s[1:]
+        facility=Facility.query.filter_by(id=int(s)).first()
+        facs=[facility]
+        t_l=getTimeList(facs)
+        t=t_l[0]
+        return render_template('fullstory.html',post=facility,time=t)
+    elif s[0]=='n':
+        s=s[1:]
+        news=News.query.filter_by(id=int(s)).first()
+        facs=[news]
+        t_l=getTimeList(facs)
+        t=t_l[0]
+        return render_template('fullstory.html',post=news,time=t)
+    elif s[0]=='h':
+        s=s[1:]
+        harvest=Harvest.query.filter_by(id=int(s)).first()
+        facs=[harvest]
+        t_l=getTimeList(facs)
+        t=t_l[0]
+        return render_template('fullstory.html',post=harvest,time=t)
+    return 'No story'
 
 @app.route('/upload',methods=['POST','GET'])
 def uploadtest():

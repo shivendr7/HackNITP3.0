@@ -27,7 +27,9 @@
     {% for n,time_t in harvests|zip(time_list) %}
     <div class="card">
         Admin <div>{{time_t}}</div><br>
+        {% if n.img %}
         <img id="storyImg" src="{{ url_for('static',filename='uploads/'+n.img) }}" alt="">
+        {% endif %}
         <br>
         <h3>{{n.title}}</h3>
         

@@ -17,16 +17,22 @@
 {% block fullstory %}
 <div class="showcard">
     <div class="card">
-        Username <div>t time ago</div>
-        <img id="storyImgShow" src="{{ url_for('static',filename='images/farm1.png') }}" alt="">
-        <h3>Strory Title</h3>
+        Username <div>{{time}}</div>
+        {% if post.img %}
+        <img id="storyImgShow" src="{{ url_for('static',filename='images/'+post.img) }}" alt="">
+        {% endif %}
+        <h3>{{post.title}}</h3>
         <br>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis veritatis iste voluptatum at praesentium autem sequi ipsam aliquid ab! Minus nobis qui fugiat provident nam nostrum reprehenderit, hic atque eius?
-        <br><br>
+        {{post.content}}<br><br>
         <div class="cardsentiment">
             <div>
+                {% if post.tag %}
                 Tags:
-                <span id="tag">#tag1</span>
+                
+                <span id="tag">{{post.tag}}</span>
+                {% else %}
+                All stopwords
+                {% endif %}
             </div>
             <div>
                 Sentiment:

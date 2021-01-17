@@ -107,6 +107,7 @@
             console.log(idx.textContent);
         });*/
         console.log(s);
+        window.location.href=`/fullstory/${s}`;
     }
 
 
@@ -129,7 +130,7 @@ var startWriting=document.querySelector('.rightcontainer .card #newStory');
     //viewing full story
     function viewFullStory() {
         axe();
-        window.location.href="/fullstory";
+        window.alert("You are viewing the same..Sorry, incomplete functionaltiy");
         /*console.log(window.scrollY);
         var showcard=document.querySelector('.showcard');
         showcard.style.setProperty('--top',window.scrollY+"px");
