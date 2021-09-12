@@ -1,4 +1,5 @@
-Farmplus is a platform that provides farmers of Bihar information and resources to grow healthy foreign crops in their regions. This is based on data of soil report and analysis by Bihar Weather Control from different regions of Bihar. 
+Farmplus is a platform that provides farmers of Bihar information and resources to grow healthy foreign crops in their regions. 
+This is based on data of soil report and analysis by Bihar Weather Control from different regions of Bihar. 
 
 For Running our app please do follow:
 
